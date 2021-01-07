@@ -9,6 +9,11 @@ svg {
     height: 20px;
     }
 
+    .HPVvwb {
+        width: 24px;
+        height: 24px;
+    }
+
 path {
     width: 14.58px;
     height: 14.58px;
@@ -22,37 +27,39 @@ path {
     width: 100vw;
     grid-template-columns: 100vw;
     grid-template-rows: 40px auto 40px;
-    grid-template-areas: 
-        "#nav-bar"
-        "#maincontent"
-        "#footer-bar";
     }
 
 #nav-bar {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     }
 
+#nav-barleft {
+    margin-left:20px;
+}
+
 #nav-barright {
     display: flex;
     height: 40px;
     width: 300px;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 #signin {
+    height: 30px;
     align-self: top;
     color: white;
     background-color: rgb(67, 135, 253);
     font-weight: 700;
+    font-size: 13px;
+    padding: 0px 12px;
 }
 
 #nav-barleft > a {
-        padding: 0px 5px;
-        margin-left: 15px;
+        margin: 0px 5px;
     }
 
 .apps {
@@ -71,12 +78,18 @@ div#googlelogo {
 
 div#searchbar {
     display: flex;
-    padding: 5px 8px 0px 14px;
+    padding: 3px 15px 2px 14px;
+    justify-content: space-between;
     align-items: center;
     border: 1px solid #dfe1e5;
     border-radius: 24px;
     height: 37px;
-    width: 482px;
+    width: 458px;
+}
+
+div#searchbar:hover {
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0)
 }
 
 #searchinput {
@@ -98,12 +111,17 @@ input.buttons {
     padding: 0px 16px; 
 }
 
+input.buttons:hover {
+    border: 1px solid rgb(218, 220, 224);
+    box-shadow: 1px 1px rgb(218, 220, 224);
+}
+
 div#buttons {
     height: 58px;
     justify-content: center;
     align-items: center;
     padding: 0px 16px;
-    margin-top: 18px;
+    margin-top: 30px;
 }
 
 #footer-bar {
@@ -111,8 +129,9 @@ div#buttons {
     justify-content: space-between;
     background-color: rgb(241, 241, 241);
     border-top: 1px solid rgb(218, 220, 224);
-    color: rgb(112, 117, 122);
     flex-wrap: wrap-reverse;
+    padding: 0px 20px;
+    
 }
 
 #footer-barright {
@@ -122,7 +141,9 @@ div#buttons {
 }
 
 #footer-barleft > a, #footer-barright > a {
-    margin: 0px 20px;
+    margin: 0px 15px;
+    font-size: 14px;
+    color: rgb(112, 117, 122);
 }
 
 #footer-barleft {
@@ -133,6 +154,35 @@ div#buttons {
     
 a {
     text-decoration: none;
-    color: rgba(0,0,0,0.87);
+    color: rgba(0,0,0,0.75);
     font-size: 13px;
     }
+
+    @media (max-width: 805px) {
+        #gridlayout {
+            grid-template-rows: 40px auto 80px;
+        }
+
+        #footer-bar {
+            flex-direction: column-reverse;
+        }
+
+        #footer-barleft{
+            height:39px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #footer-barright{
+            height: 39px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 550px) {
+
+    div#searchbar {
+        width: 85vw;
+    }
+}
